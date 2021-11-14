@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*  */
+  html {
+    font-size: 62.5%;
+    @apply box-border;
+
+    @media (max-width: 600px) {
+      font-size: 58%;
+    }
+  }
+
+  /* FONTS */
+  @font-face {
+    font-family: 'Loew';
+    src: url(../fonts/loew/ExtraBold.otf);
+  }
+  @font-face {
+    font-family: 'Loew';
+    src: url(../fonts/loew/Bold.otf);
+  }
+  @font-face {
+    font-family: 'Loew';
+    src: url(../fonts/loew/Heavy.otf);
+  }
+  @font-face {
+    font-family: 'Loew';
+    src: url(../fonts/loew/Medium.otf);
+  }
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
