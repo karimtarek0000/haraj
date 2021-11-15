@@ -3,6 +3,17 @@ module.exports = {
     debugScreens: {
       position: ['top', 'right'],
     },
+    fontSize: {
+      xs: '1.2rem',
+      sm: '1.6rem',
+      lg: '4rem',
+    },
+    fontWeight: {
+      medium: 500,
+      bold: 700,
+      extrabold: 800,
+      heavy: 900,
+    },
     extend: {
       fontFamily: {
         Loew: ['Loew'],
@@ -10,6 +21,9 @@ module.exports = {
       colors: {
         mercury: '#E2E2E2',
         mountain: '#1EAF62',
+        link: '#d1dcf5',
+        narvik: '#e8f7ef',
+        royal: '#3f72dc',
       },
     },
   },

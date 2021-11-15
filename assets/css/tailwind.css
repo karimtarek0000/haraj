@@ -9,30 +9,43 @@
     @apply box-border;
 
     @media (max-width: 600px) {
-      font-size: 58%;
+      font-size: 44%;
     }
+  }
+
+  body {
+    @apply font-Loew;
+    height: 10000px;
   }
 
   /* FONTS */
   @font-face {
     font-family: 'Loew';
     src: url(../fonts/loew/ExtraBold.otf);
+    font-weight: 800;
   }
   @font-face {
     font-family: 'Loew';
     src: url(../fonts/loew/Bold.otf);
-  }
-  @font-face {
-    font-family: 'Loew';
-    src: url(../fonts/loew/Heavy.otf);
+    font-weight: 700;
   }
   @font-face {
     font-family: 'Loew';
     src: url(../fonts/loew/Medium.otf);
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Loew';
+    src: url(../fonts/loew/Heavy.otf);
+    font-weight: 900;
   }
 }
 
 img {
   user-select: none;
   pointer-events: none;
+}
+
+.adj-image {
+  @apply object-cover w-full h-full max-w-full;
 }
