@@ -120,7 +120,7 @@ export default {
   @apply w-9/12 text-lg font-heavy;
 }
 .slide__content p {
-  @apply my-5 text-sm font-medium text-link;
+  @apply my-5 text-md font-medium text-link;
 }
 .slide__content__btn {
   @apply mt-12 transition duration-500  mie-auto bg-mountain hover:bg-opacity-80;
@@ -128,7 +128,7 @@ export default {
   height: 4.5rem;
 }
 .slide__content__logo {
-  @apply mt-auto mb-2 text-sm text-opacity-75 font-heavy text-link;
+  @apply mt-auto mb-2 text-md text-opacity-75 font-heavy text-link;
 }
 
 .slick-dots {

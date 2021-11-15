@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="link" class="flex items-center justify-center text-sm">
+  <nuxt-link :to="link" class="flex items-center justify-center text-md">
     {{ title }}
   </nuxt-link>
 </template>

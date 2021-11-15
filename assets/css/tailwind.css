@@ -46,6 +46,14 @@ img {
   pointer-events: none;
 }
 
+h1,
+h2,
+h3,
+p,
+a {
+  user-select: none;
+}
+
 .adj-image {
   @apply object-cover w-full h-full max-w-full;
 }

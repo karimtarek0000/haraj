@@ -20,12 +20,14 @@
         <GSvg style="width: 2.4rem; height: 2.4rem" name-icon="notification" />
         <span class="navbar__actions__notifi__count">23</span>
       </nuxt-link>
-      <!--  -->
+      <!-- ADD YOUR ADS -->
       <AppGoTo
         style="width: 14rem; height: 5rem"
-        class="text-white transition duration-300 bg-royal hover:bg-opacity-90"
+        class="navbar__actions__add-ads"
         v-bind="{ title: 'أضف اعلانك', link: '/' }"
       />
+      <!-- SELECT -->
+      <AppSelect :data="dataSelect" style="width: 14rem; height: 5rem" />
     </div>
   </nav>
 </template>
@@ -33,6 +35,23 @@
 <script>
 export default {
   name: 'AppNavbar',
+  data() {
+    return {
+      dataSelect: {
+        title: 'التسجيل',
+        content: [
+          {
+            link: '/',
+            name: 'تسجيل الدخول',
+          },
+          {
+            link: '/',
+            name: 'انشاء حساب جديد',
+          },
+        ],
+      },
+    }
+  },
 }
 </script>
 
@@ -42,5 +61,30 @@ export default {
 }
 .navbar__actions__notifi__count {
   @apply absolute top-2 left-2 font-bold text-xs;
+}
+.navbar__actions__add-ads {
+  @apply transition duration-300 bg-royal hover:bg-opacity-90 text-white mie-3 md:mie-7;
+}
+
+.navbar .select__content {
+  @apply bg-white;
+}
+.navbar .select__btn {
+  @apply justify-center border border-royal;
+}
+.navbar .select__btn span {
+  @apply text-royal;
+}
+.navbar .select__content {
+  @apply mt-7;
+}
+.navbar .select__content > div {
+  @apply border border-link;
+}
+.navbar .select__content a {
+  @apply py-7 text-center;
+}
+.navbar .select__content a:not(:last-child) {
+  @apply border-b border-link;
 }
 </style>
