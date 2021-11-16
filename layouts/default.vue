@@ -1,9 +1,12 @@
 <template>
-  <div class="debug-screens container">
+  <div class="container debug-screens">
     <!-- START NAVBAR -->
     <AppNavbar />
     <!-- END NAVBAR -->
+
+    <!-- START PAGES -->
     <Nuxt />
+    <!-- END PAGES -->
   </div>
 </template>
 

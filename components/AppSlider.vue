@@ -117,7 +117,7 @@ export default {
   direction: rtl;
 }
 .slide__content h2 {
-  @apply w-9/12 text-lg font-heavy;
+  @apply w-9/12 text-xl font-heavy;
 }
 .slide__content p {
   @apply my-5 text-md font-medium text-link;

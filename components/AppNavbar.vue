@@ -82,7 +82,7 @@ export default {
   @apply border border-link;
 }
 .navbar .select__content a {
-  @apply py-7 text-center;
+  @apply py-7 text-center px-2;
 }
 .navbar .select__content a:not(:last-child) {
   @apply border-b border-link;

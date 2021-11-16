@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   theme: {
     debugScreens: {
       position: ['top', 'right'],
@@ -7,7 +8,8 @@ module.exports = {
       xs: '1.2rem',
       sm: '1.4rem',
       md: '1.6rem',
-      lg: '4rem',
+      lg: '2rem',
+      xl: '4rem',
     },
     fontWeight: {
       medium: 500,
@@ -25,6 +27,14 @@ module.exports = {
         link: '#d1dcf5',
         narvik: '#e8f7ef',
         royal: '#3f72dc',
+        alabaster: '#f8f8f8',
+      },
+      outline: {
+        royal: '1px solid #3f72dc',
+      },
+      gridTemplateColumns: {
+        // GRID SEARCH AND SORT
+        ss: 'minmax(20rem, 1fr) repeat(2, minmax(16rem, 19.8rem)) minmax(12rem, 14.5rem)',
       },
     },
   },

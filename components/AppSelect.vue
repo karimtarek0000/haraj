@@ -4,7 +4,7 @@
     <button
       type="button"
       :class="['select__btn', { 'select__btn--anim': status }]"
-      @click="status = !status"
+      @click.stop="status = !status"
     >
       <span class="text-md" v-text="data.title" />
       <GSvg
@@ -15,14 +15,23 @@
     </button>
     <!-- CONTENT -->
     <div :class="['select__content', { 'select__content--anim': status }]">
-      <div>
+      <div v-if="type === 'btn'">
+        <button
+          v-for="content in data.content"
+          :key="content.link"
+          class="select__content__action__btn"
+          @click="sendSelected(content.name)"
+          v-text="content.name"
+        />
+      </div>
+      <div v-else>
         <nuxt-link
           v-for="content in data.content"
           :key="content.link"
           :to="content.link"
-          class="block text-sm"
-          >{{ content.name }}</nuxt-link
-        >
+          class="select__content__action__link"
+          v-text="content.name"
+        />
       </div>
     </div>
   </div>
@@ -36,11 +45,25 @@ export default {
       type: Object,
       required: true,
     },
+    type: {
+      type: String,
+      default: 'link',
+    },
   },
   data() {
     return {
       status: false,
     }
+  },
+  mounted() {
+    document.addEventListener('click', () => {
+      this.status = false
+    })
+  },
+  methods: {
+    sendSelected(d) {
+      this.$emit('userSelected', d)
+    },
   },
 }
 </script>
@@ -66,5 +89,12 @@ export default {
 }
 .select__content--anim {
   max-height: 500px;
+}
+
+.select__content__action__btn {
+  @apply w-full text-sm transition-colors duration-300  text-start hover:bg-royal hover:text-white;
+}
+.select__content__action__link {
+  @apply block text-sm transition-colors duration-300  hover:bg-royal hover:text-white;
 }
 </style>
