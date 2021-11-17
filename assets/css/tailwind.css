@@ -7,8 +7,9 @@
   html {
     font-size: 62.5%;
     @apply box-border;
-
-    @media (max-width: 600px) {
+    direction: rtl;
+    /*  */
+    @media (max-width: 37.5em) {
       font-size: 44%;
     }
   }

@@ -176,7 +176,7 @@
       </div>
       <!-- END CATEGORIES -->
     </section>
-    <!-- START SECTION ADS -->
+    <!-- END SECTION ADS -->
   </main>
 </template>
 
@@ -224,28 +224,27 @@ export default {
         ],
       },
       cars: [
-        'kia.svg',
-        'toyota.svg',
-        'nissan.svg',
-        'folx.svg',
-        'ford.svg',
-        'mg.svg',
-        'honda.svg',
-        'volvo.svg',
-        'hyundai.svg',
-        'mt.svg',
-        'brii.svg',
-        'marced.svg',
-        'rover.svg',
-        'audi.svg',
-        'chevrolet.svg',
+        'kia.png',
+        'toyota.png',
+        'nissan.png',
+        'folx.png',
+        'ford.png',
+        'mg.png',
+        'honda.png',
+        'volvo.png',
+        'hyundai.png',
+        'mt.png',
+        'brii.png',
+        'marced.png',
+        'rover.png',
+        'audi.png',
+        'chevrolet.png',
       ],
       settings: {
         dots: false,
-        lazyLoad: 'ondemand',
+        initialSlide: 0,
         slidesToShow: 3,
         slidesToScroll: 3,
-        rtl: true,
         arrows: true,
         pauseOnDotsHover: true,
         pauseOnFocus: true,
@@ -323,7 +322,10 @@ export default {
   @apply grid grid-cols-3 gap-3 mx-auto my-14;
   width: 95%;
 }
-@media only screen and (min-width: 600px) {
+.browse__ads__cars img {
+  transform: scale(0.6);
+}
+@media only screen and (min-width: 37.5em) {
   .browse__ads__cars {
     width: 27.6rem;
   }
@@ -414,10 +416,13 @@ export default {
 .ads__city > * {
   @apply w-full;
 }
-@media only screen and (min-width: 550px) {
-  .ads__content .slide {
-    height: 40rem;
-  }
+.ads__content .slide {
+  @apply mb-40;
+}
+.ads__content .slide {
+  height: auto;
+}
+@media only screen and (min-width: 34.375em) {
   .ads__content .ads__content__image {
     max-height: 18rem;
   }
