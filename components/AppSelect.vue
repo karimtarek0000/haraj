@@ -82,7 +82,7 @@ export default {
   @apply flex items-center justify-between h-full w-full;
 }
 .select__btn svg {
-  @apply transition-transform duration-300;
+  @apply transition-transform duration-300 text-royal fill-current;
 }
 .select__btn--anim svg {
   transform: rotate(180deg);

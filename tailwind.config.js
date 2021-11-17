@@ -8,7 +8,9 @@ module.exports = {
       xs: '1.2rem',
       sm: '1.4rem',
       md: '1.6rem',
+      mdx1: '1.7rem',
       lg: '2rem',
+      lgx1: '2.5rem',
       xl: '4rem',
     },
     fontWeight: {
@@ -28,6 +30,8 @@ module.exports = {
         narvik: '#e8f7ef',
         royal: '#3f72dc',
         alabaster: '#f8f8f8',
+        selago: '#ebf1fc',
+        silver: '#ACACAC',
       },
       outline: {
         royal: '1px solid #3f72dc',
@@ -35,6 +39,8 @@ module.exports = {
       gridTemplateColumns: {
         // GRID SEARCH AND SORT
         ss: 'minmax(20rem, 1fr) repeat(2, minmax(16rem, 19.8rem)) minmax(12rem, 14.5rem)',
+        mainBody: '33.6rem 1fr',
+        mainBodyRes: '28rem 1fr',
       },
     },
   },

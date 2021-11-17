@@ -107,7 +107,7 @@ export default {
 
 <style>
 .slide {
-  height: 500px !important;
+  height: 500px;
 }
 .slide__image {
   @apply absolute top-0 left-0 w-full h-full;

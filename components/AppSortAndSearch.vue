@@ -7,12 +7,7 @@
     <div class="sort-and-search__wrapper">
       <!-- SEARCH -->
       <form class="sort-and-search__form">
-        <input
-          class="w-full h-full"
-          type="text"
-          placeholder="ادخل كلمة البحث..."
-          inputmode="text"
-        />
+        <slot name="search" />
       </form>
       <!-- ADD -->
       <slot />
