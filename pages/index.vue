@@ -1,11 +1,11 @@
 <template>
   <main>
     <!-- START SLIDER -->
-    <AppSliderHeader />
+    <AppSliderHeader class="container" />
     <!-- END SLIDER -->
 
     <!-- START SORT AND SEARCH -->
-    <AppSortAndSearch>
+    <AppSortAndSearch class="container">
       <!-- SLOTS -->
       <!-- ----- -->
       <!-- SEARCH -->
@@ -30,7 +30,7 @@
     <!-- END SORT AND SEARCH -->
 
     <!-- START SECTION BROWES -->
-    <section class="browse">
+    <section class="container browse">
       <!-- START ADS -->
       <div class="browse__ads">
         <!-- START HEAD -->
@@ -112,7 +112,7 @@
     <!-- END SECTION BROWES -->
 
     <!-- START SECTION ADS -->
-    <section class="ads">
+    <section class="container ads">
       <!-- ADS CITY -->
       <div class="ads__city">
         <h2>إعلانات المدن</h2>
@@ -177,6 +177,38 @@
       <!-- END CATEGORIES -->
     </section>
     <!-- END SECTION ADS -->
+
+    <!-- START DOWNLOAD APP -->
+    <section class="download-app">
+      <!--  -->
+      <div class="download-app__image">
+        <AppAddImage
+          class="adj-image"
+          src="banars/4.jpg"
+          alt="حمل-التطبيق-الان"
+        />
+      </div>
+      <!--  -->
+      <div class="container download-app__content">
+        <h4>حمل التطبيق الأن</h4>
+        <p>استمتع بتجربة مميزة وقريبة منك .. حمل تطبيق الجوال على جوالك الأن</p>
+        <div class="download-app__content__links">
+          <a href="#">
+            <img
+              src="~/assets/icons/google.svg"
+              alt="تحميل-التطبيق-من-جوجل-بلاي"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="~/assets/icons/apple.svg"
+              alt="تحميل-التطبيق-من-ابل-ستور"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- END DOWNLOAD APP -->
   </main>
 </template>
 
@@ -472,5 +504,34 @@ export default {
   @apply text-white bg-mountain transition-colors duration-300 hover:bg-opacity-90 mis-10;
   width: 14.5rem;
   height: 5rem;
+}
+
+/* DOWNLOAD APP */
+.download-app {
+  @apply relative mt-9;
+}
+.download-app__image {
+  height: 26.2rem;
+  max-height: 26.2rem;
+}
+.download-app__content {
+  @apply absolute top-0 flex flex-col justify-center h-full  inset-inline-0;
+}
+.download-app__content h4 {
+  @apply text-lgx1 font-heavy text-royal;
+}
+.download-app__content p {
+  @apply mt-5 pie-20  font-medium text-black text-sm md:text-md text-opacity-70;
+}
+.download-app__content__links {
+  @apply flex items-center;
+}
+.download-app__content__links a {
+  @apply bg-black flex justify-center p-4 items-center mt-10 hover:bg-opacity-80 transition-colors duration-300;
+  width: 15.1rem;
+  height: 5rem;
+}
+.download-app__content__links a:first-of-type {
+  @apply mie-5;
 }
 </style>

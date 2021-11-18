@@ -7,6 +7,7 @@ module.exports = {
     fontSize: {
       xs: '1.2rem',
       sm: '1.4rem',
+      smx1: '1.5rem',
       md: '1.6rem',
       mdx1: '1.7rem',
       lg: '2rem',
@@ -29,6 +30,7 @@ module.exports = {
         link: '#d1dcf5',
         narvik: '#e8f7ef',
         royal: '#3f72dc',
+        mariner: '#2e64d4',
         alabaster: '#f8f8f8',
         selago: '#ebf1fc',
         silver: '#ACACAC',
