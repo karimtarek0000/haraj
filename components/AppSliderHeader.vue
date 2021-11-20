@@ -135,6 +135,7 @@ export default {
   display: flex !important;
   align-items: center;
   justify-content: center;
+  direction: ltr !important;
 }
 .slick-dots li {
   color: transparent;

@@ -59,20 +59,4 @@ export default {
 .sort-and-search__form {
   @apply col-start-1 col-span-full lg:col-start-auto lg:col-span-1 border border-mercury;
 }
-
-.sort-and-search .select__btn {
-  @apply bg-white px-4 border border-mercury;
-}
-.sort-and-search .select__content {
-  @apply bg-white;
-}
-.sort-and-search .select__content > div {
-  @apply py-6 border border-mercury;
-}
-.sort-and-search .select__content div > * {
-  @apply py-2 px-3;
-}
-.sort-and-search .select__content div > *:not(:last-child) {
-  @apply mb-6;
-}
 </style>

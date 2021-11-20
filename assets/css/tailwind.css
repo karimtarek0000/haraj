@@ -93,3 +93,30 @@
 .slick-arrow.slick-prev {
   transform: translateX(-55px);
 }
+
+/* SELECT */
+.select-1 .select__btn {
+  @apply px-4 bg-white border border-mercury;
+}
+.select-1 .select__content {
+  @apply bg-white;
+}
+.select-1 .select__content > div {
+  @apply py-6 border border-mercury;
+}
+.select-1 .select__content div > * {
+  @apply px-3 py-4;
+}
+.select-1 .select__content div > *:not(:last-child) {
+  @apply mb-2;
+}
+
+/* GENERAL */
+/* ------- */
+/* BORDER */
+.browse__ads,
+.sidebar-ads > div,
+.card__ads--row,
+.browse__categories__content__link {
+  @apply border border-mercury;
+}

@@ -18,7 +18,7 @@
       <div v-if="type === 'btn'">
         <button
           v-for="content in data.content"
-          :key="content.link"
+          :key="content.name"
           class="select__content__action__btn"
           @click="sendSelected(content.name)"
           v-text="content.name"
@@ -90,7 +90,6 @@ export default {
 .select__content--anim {
   max-height: 500px;
 }
-
 .select__content__action__btn {
   @apply w-full text-sm transition-colors duration-300  text-start hover:bg-royal hover:text-white;
 }

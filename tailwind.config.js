@@ -34,6 +34,7 @@ module.exports = {
         alabaster: '#f8f8f8',
         selago: '#ebf1fc',
         silver: '#ACACAC',
+        seashell: '#F2F1F1',
       },
       outline: {
         royal: '1px solid #3f72dc',

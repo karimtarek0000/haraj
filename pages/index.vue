@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="select-1">
     <!-- START SLIDER -->
     <AppSliderHeader class="container" />
     <!-- END SLIDER -->
@@ -114,10 +114,10 @@
     <!-- START SECTION ADS -->
     <section class="container ads">
       <!-- ADS CITY -->
-      <div class="ads__city">
+      <div class="sidebar-ads">
         <h2>إعلانات المدن</h2>
         <!-- CONTENT -->
-        <div class="ads__city__content">
+        <div class="sidebar-ads__content">
           <!-- INDEVISUAL ADS -->
           <nuxt-link v-for="i in 9" :key="i" to="/">
             <div class="flex items-center">
@@ -139,20 +139,20 @@
         <!-- SLIDER CONTENT -->
         <VueSlickCarousel class="ads__content__slider" v-bind="settings">
           <div v-for="i in 6" :key="i" class="slide">
-            <div>
+            <div class="card__ads">
               <!-- IMAGE -->
-              <div class="ads__content__image">
+              <div class="card__ads__image">
                 <img class="adj-image" src="~/assets/images/test.jpg" alt="" />
               </div>
               <!-- CITY AND DISCRIPTION -->
-              <div class="ads__content__content">
+              <div class="card__ads__content">
                 <!-- CITY -->
                 <figure>الرياض</figure>
                 <!-- DISCRIPTION -->
                 <p>سيارة رانج روفر 2021 للبيع في منطقة جدة {{ i }}</p>
               </div>
               <!-- TIMES AND AUTHOR -->
-              <div class="ads__content__other-info">
+              <div class="card__ads__other-info">
                 <div>
                   <GSvg name-icon="time" />
                   <span class="mis-2">منذ ساعتين</span>
@@ -177,6 +177,84 @@
       <!-- END CATEGORIES -->
     </section>
     <!-- END SECTION ADS -->
+
+    <!-- START ALL -->
+    <section class="container all-ads">
+      <!-- ADS BUILDING -->
+      <div class="sidebar-ads">
+        <h2>حراج العقارات</h2>
+        <!-- CONTENT -->
+        <div class="sidebar-ads__content">
+          <!-- INDEVISUAL ADS -->
+          <nuxt-link v-for="i in 9" :key="i" to="/">
+            <div class="flex items-center">
+              <p>فلل للبيع</p>
+              <figure class="mis-7">(180)</figure>
+            </div>
+            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
+          </nuxt-link>
+          <!-- ALL ADS -->
+          <nuxt-link to="/">
+            <GSvg name-icon="all" />
+            <p>كل إعلانات المدن</p>
+          </nuxt-link>
+        </div>
+      </div>
+      <!--  -->
+      <div class="flex flex-col gap-y-12">
+        <!--  -->
+        <div class="all-ads__bar">
+          <h2>كل الإعلانات</h2>
+          <!--  -->
+          <div class="gap-x-5 all-ads__bar__actions">
+            <!--  -->
+            <button class="bg-mountain all-ads__bar__actions__btn">
+              <GSvg name-icon="grid" />
+            </button>
+            <!--  -->
+            <button class="bg-royal all-ads__bar__actions__btn">
+              <GSvg name-icon="send" />
+            </button>
+            <!-- SELECT CITY -->
+            <AppSelect
+              style="width: 13rem; height: 4.5rem"
+              v-bind="{ data: s, type: 'btn' }"
+            />
+          </div>
+        </div>
+        <!--  -->
+        <div>
+          <div v-for="i in 3" :key="i" class="card__ads card__ads--row">
+            <!-- IMAGE -->
+            <div class="card__ads__image">
+              <img class="adj-image" src="~/assets/images/test.jpg" alt="" />
+            </div>
+            <div>
+              <!-- CITY AND DISCRIPTION -->
+              <div class="card__ads__content">
+                <!-- CITY -->
+                <figure>الرياض</figure>
+                <!-- DISCRIPTION -->
+                <p>سيارة رانج روفر 2021 للبيع في منطقة جدة للبيع الأن</p>
+              </div>
+              <!-- TIMES AND AUTHOR -->
+              <div class="card__ads__other-info">
+                <div>
+                  <GSvg name-icon="time" />
+                  <span class="mis-2">منذ ساعتين</span>
+                </div>
+                <div>
+                  <GSvg name-icon="user" />
+                  <span class="mis-2">كريم علم الدين</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END CATEGORIES -->
+    </section>
+    <!-- END -->
 
     <!-- START DOWNLOAD APP -->
     <section class="download-app">
@@ -255,6 +333,17 @@ export default {
           },
         ],
       },
+      s: {
+        title: 'كل المدن',
+        content: [
+          {
+            name: 'الدمام',
+          },
+          {
+            name: 'الرياض',
+          },
+        ],
+      },
       cars: [
         'kia.png',
         'toyota.png',
@@ -311,18 +400,15 @@ export default {
 </script>
 <style>
 .browse,
+.all-ads,
 .ads {
   @apply grid items-start gap-10 lg:gap-20 mt-14 md:grid-cols-mainBodyRes lg:grid-cols-mainBody;
-}
-.browse__ads,
-.ads__city > div {
-  @apply border border-mercury;
 }
 .browse__categories {
   @apply font-heavy text-lgx1 h-full  grid grid-cols-1 items-end;
 }
 .browse__categories,
-.ads__city,
+.sidebar-ads,
 .ads__content h2 {
   @apply text-center md:text-start;
 }
@@ -372,7 +458,7 @@ export default {
   @apply mt-20 grid grid-cols-2  lg:grid-cols-4 gap-7;
 }
 .browse__categories__content__link {
-  @apply border border-mercury flex flex-col items-center justify-center hover:bg-mountain transition-colors duration-300;
+  @apply flex flex-col items-center justify-center hover:bg-mountain transition-colors duration-300;
   height: 17.8rem;
 }
 .browse__categories__content__link:hover p {
@@ -416,37 +502,38 @@ export default {
 .ads__content__slider .slide {
   direction: rtl;
 }
-.ads__city > div {
+.sidebar-ads > div {
   @apply px-10 mt-16;
 }
-.ads__city .ads__city__content a {
+.sidebar-ads .sidebar-ads__content a {
   @apply flex items-center justify-between text-md py-7;
 }
-.ads__city .ads__city__content svg {
+.sidebar-ads .sidebar-ads__content svg {
   @apply text-silver fill-current;
 }
-.ads__city a:not(:last-of-type) {
+.sidebar-ads a:not(:last-of-type) {
   @apply border-b border-mercury;
 }
-.ads__city a:last-of-type {
+.sidebar-ads a:last-of-type {
   @apply text-md text-mountain justify-center font-extrabold;
 }
-.ads__city a:last-of-type svg {
+.sidebar-ads a:last-of-type svg {
   @apply mie-3;
   width: 2.4rem;
   height: 2.4rem;
 }
-.ads__city a svg {
+.sidebar-ads a svg {
   transform: rotate(90deg);
 }
-.ads__city a figure {
+.sidebar-ads a figure {
   @apply text-royal font-bold;
 }
+.sidebar-ads > * {
+  @apply w-full;
+}
+
 .ads .select__content {
   @apply relative;
-}
-.ads__city > * {
-  @apply w-full;
 }
 .ads__content .slide {
   @apply mb-40;
@@ -458,35 +545,6 @@ export default {
   .ads__content .ads__content__image {
     max-height: 18rem;
   }
-}
-.ads__content .slide figure {
-  @apply bg-selago flex items-center justify-center text-sm text-royal my-5;
-  width: 10rem;
-  height: 3.5rem;
-}
-.ads__content .slide p {
-  @apply text-mdx1 font-bold;
-}
-.ads__content .slide svg {
-  width: 1.7rem;
-  height: 1.7rem;
-}
-.ads__content .ads__content__other-info {
-  @apply mt-5 justify-between;
-}
-.ads__content .ads__content__other-info {
-  @apply text-xs text-silver;
-}
-.ads__content .ads__content__other-info,
-.ads__content .ads__content__other-info > div {
-  @apply flex items-center;
-}
-.ads__content .ads__content__image {
-  @apply relative overflow-hidden;
-}
-.ads__content .ads__content__image::after {
-  content: '';
-  @apply top-0 left-0 right-0 bottom-0 absolute bg-gradient-to-t  from-transparent to-royal;
 }
 .ads__content .slick-slide {
   @apply pis-5;
@@ -504,6 +562,62 @@ export default {
   @apply text-white bg-mountain transition-colors duration-300 hover:bg-opacity-90 mis-10;
   width: 14.5rem;
   height: 5rem;
+}
+
+/* ADS BAR */
+.all-ads__bar,
+.all-ads__bar .all-ads__bar__actions,
+.all-ads__bar .all-ads__bar__actions button {
+  @apply flex items-center justify-center;
+}
+.all-ads__bar {
+  @apply justify-between;
+}
+.all-ads__bar .all-ads__bar__actions .all-ads__bar__actions__btn {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+.all-ads__bar .all-ads__bar__actions .all-ads__bar__actions__btn svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* CARD ADS */
+.card__ads--row {
+  @apply flex items-center mb-5 gap-x-8 overflow-hidden;
+}
+.card__ads--row .card__ads__image {
+  width: 20rem;
+  height: 17.8rem;
+}
+.card__ads figure {
+  @apply bg-selago flex items-center justify-center text-sm text-royal my-5;
+  width: 10rem;
+  height: 3.5rem;
+}
+.card__ads p {
+  @apply text-mdx1 font-bold;
+}
+.card__ads svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.card__ads .card__ads__other-info {
+  @apply text-xs text-silver mt-5 justify-start;
+}
+.card__ads .card__ads__other-info,
+.card__ads .card__ads__other-info > div {
+  @apply flex items-center;
+}
+.card__ads .card__ads__other-info > div:nth-child(1) {
+  @apply mie-7;
+}
+.card__ads .card__ads__image {
+  @apply relative overflow-hidden;
+}
+.card__ads .card__ads__image::after {
+  content: '';
+  @apply top-0 left-0 right-0 bottom-0 absolute bg-gradient-to-t  from-transparent to-royal;
 }
 
 /* DOWNLOAD APP */
@@ -533,5 +647,9 @@ export default {
 }
 .download-app__content__links a:first-of-type {
   @apply mie-5;
+}
+
+.all-ads__bar__actions .select__btn {
+  @apply bg-seashell border-0;
 }
 </style>
