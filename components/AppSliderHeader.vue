@@ -1,7 +1,7 @@
 <template>
   <VueSlickCarousel v-bind="settings">
     <!-- START SLIDE -->
-    <div class="relative slide">
+    <div v-for="i in 3" :key="i" class="relative slide">
       <!-- IMAGE -->
       <div class="slide__image">
         <img
@@ -17,59 +17,7 @@
           <p role="discription">الاف السيارات في كل الأقسام وبكل الانواع</p>
           <AppGoTo
             v-bind="{ title: 'تصفح الاعلانات', link: '/' }"
-            class="slide__content__btn"
-          />
-        </div>
-        <figure role="site-name" class="slide__content__logo">
-          حراج السعودية
-        </figure>
-      </div>
-    </div>
-    <!-- END SLIDE -->
-    <!-- START SLIDE -->
-    <div class="relative slide">
-      <!-- IMAGE -->
-      <div class="slide__image">
-        <img
-          class="adj-image"
-          src="~/assets/images/slider/slider.webp"
-          alt=""
-        />
-      </div>
-      <!-- CONTENT -->
-      <div class="slide__content">
-        <div class="mt-auto">
-          <h2 role="title">ابحث عن سيارتك على كيفك</h2>
-          <p role="discription">الاف السيارات في كل الأقسام وبكل الانواع</p>
-          <AppGoTo
-            v-bind="{ title: 'تصفح الاعلانات', link: '/' }"
-            class="slide__content__btn"
-          />
-        </div>
-        <figure role="site-name" class="slide__content__logo">
-          حراج السعودية
-        </figure>
-      </div>
-    </div>
-    <!-- END SLIDE -->
-    <!-- START SLIDE -->
-    <div class="relative slide">
-      <!-- IMAGE -->
-      <div class="slide__image">
-        <img
-          class="adj-image"
-          src="~/assets/images/slider/slider.webp"
-          alt=""
-        />
-      </div>
-      <!-- CONTENT -->
-      <div class="slide__content">
-        <div class="mt-auto">
-          <h2 role="title">ابحث عن سيارتك على كيفك</h2>
-          <p role="discription">الاف السيارات في كل الأقسام وبكل الانواع</p>
-          <AppGoTo
-            v-bind="{ title: 'تصفح الاعلانات', link: '/' }"
-            class="slide__content__btn"
+            class="mt-12 btn btn-w-1 bg-mountain mie-auto"
           />
         </div>
         <figure role="site-name" class="slide__content__logo">
@@ -121,11 +69,6 @@ export default {
 }
 .slide__content p {
   @apply my-5 text-md font-medium text-link;
-}
-.slide__content__btn {
-  @apply mt-12 transition duration-500  mie-auto bg-mountain hover:bg-opacity-80;
-  width: 14rem;
-  height: 4.5rem;
 }
 .slide__content__logo {
   @apply mt-auto mb-2 text-md text-opacity-75 font-heavy text-link;

@@ -49,11 +49,16 @@
     user-select: none;
   }
 
+  h2,
+  h3,
+  h5 {
+    @apply font-heavy;
+  }
   h2 {
-    @apply text-lgx1 font-heavy;
+    @apply text-lgx1;
   }
   h3 {
-    @apply text-lg font-heavy;
+    @apply text-lg;
   }
 
   img {
@@ -113,10 +118,20 @@
 
 /* GENERAL */
 /* ------- */
+
 /* BORDER */
 .browse__ads,
 .sidebar-ads > div,
 .card__ads--row,
 .browse__categories__content__link {
   @apply border border-mercury;
+}
+
+/* BUTTONS */
+.btn {
+  @apply text-white transition-colors duration-300 hover:bg-opacity-90;
+  height: 5rem;
+}
+.btn-w-1 {
+  width: 14.5rem;
 }

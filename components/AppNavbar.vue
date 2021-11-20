@@ -3,7 +3,7 @@
     <!-- LOGO -->
     <nuxt-link to="/">
       <AppAddImage
-        style="height: 62px"
+        style="max-height: 6rem"
         src="logo.svg"
         alt="لوجو-حراج-السعودية"
       />

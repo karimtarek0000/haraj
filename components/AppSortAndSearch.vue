@@ -15,7 +15,7 @@
       <button
         type="submit"
         style="height: 5rem"
-        class="sort-and-search__submit"
+        class="sort-and-search__submit btn bg-royal"
       >
         بحث
       </button>
@@ -54,7 +54,7 @@ export default {
   color: #acacac;
 }
 .sort-and-search__submit {
-  @apply col-start-1 row-start-3 row-end-3 text-white  md:row-start-2 md:row-end-2 lg:row-start-1 lg:row-end-1 col-span-full bg-royal text-md md:col-start-3 md:col-end-4 lg:col-start-4 lg:col-end-5;
+  @apply col-start-1 row-start-3 row-end-3 md:row-start-2 md:row-end-2 lg:row-start-1 lg:row-end-1 col-span-full  text-md md:col-start-3 md:col-end-4 lg:col-start-4 lg:col-end-5;
 }
 .sort-and-search__form {
   @apply col-start-1 col-span-full lg:col-start-auto lg:col-span-1 border border-mercury;

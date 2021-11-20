@@ -144,33 +144,43 @@
               <div class="card__ads__image">
                 <img class="adj-image" src="~/assets/images/test.jpg" alt="" />
               </div>
-              <!-- CITY AND DISCRIPTION -->
-              <div class="card__ads__content">
-                <!-- CITY -->
-                <figure>الرياض</figure>
-                <!-- DISCRIPTION -->
-                <p>سيارة رانج روفر 2021 للبيع في منطقة جدة {{ i }}</p>
-              </div>
-              <!-- TIMES AND AUTHOR -->
-              <div class="card__ads__other-info">
-                <div>
-                  <GSvg name-icon="time" />
-                  <span class="mis-2">منذ ساعتين</span>
+              <!-- OTHER INFO -->
+              <div>
+                <!-- CITY AND DISCRIPTION -->
+                <div class="w-full card__ads__content">
+                  <!-- CITY -->
+                  <figure>الرياض</figure>
+                  <!-- DISCRIPTION -->
+                  <p>سيارة رانج روفر 2021 للبيع في منطقة جدة {{ i }}</p>
                 </div>
-                <div>
-                  <GSvg name-icon="user" />
-                  <span class="mis-2">كريم علم الدين</span>
+                <!-- TIMES AND AUTHOR -->
+                <div class="card__ads__other-info">
+                  <div>
+                    <GSvg name-icon="time" />
+                    <span class="mis-2">منذ ساعتين</span>
+                  </div>
+                  <div>
+                    <GSvg name-icon="user" />
+                    <span class="mis-2">كريم علم الدين</span>
+                  </div>
                 </div>
               </div>
+              <!-- FAVORIT -->
+              <button class="card__ads__favorit">
+                <GSvg name-icon="heart" />
+              </button>
             </div>
           </div>
         </VueSlickCarousel>
-        <!-- BANAR -->
+        <!-- ADD NEW ADS -->
         <div class="ads__banar banar">
           <AppAddImage class="adj-image" src="banars/3.jpg" />
           <div class="ads__banar__content">
             <h4>أضف اعلانك الأن</h4>
-            <AppGoTo v-bind="{ title: 'اضف اعلان', link: '/' }" />
+            <AppGoTo
+              class="btn btn-w-1 mis-10 bg-mountain"
+              v-bind="{ title: 'اضف اعلان', link: '/' }"
+            />
           </div>
         </div>
       </div>
@@ -201,34 +211,35 @@
         </div>
       </div>
       <!--  -->
-      <div class="flex flex-col gap-y-12">
-        <!--  -->
+      <div class="flex flex-col">
+        <!-- ALL ADS BAR -->
         <div class="all-ads__bar">
-          <h2>كل الإعلانات</h2>
+          <h2 class="mb-7 sm:mb-0">كل الإعلانات</h2>
           <!--  -->
-          <div class="gap-x-5 all-ads__bar__actions">
+          <div class="all-ads__bar__actions">
             <!--  -->
             <button class="bg-mountain all-ads__bar__actions__btn">
               <GSvg name-icon="grid" />
             </button>
             <!--  -->
-            <button class="bg-royal all-ads__bar__actions__btn">
+            <button class="mx-5 bg-royal all-ads__bar__actions__btn">
               <GSvg name-icon="send" />
             </button>
             <!-- SELECT CITY -->
             <AppSelect
-              style="width: 13rem; height: 4.5rem"
+              style="min-width: 20rem; height: 4.5rem"
               v-bind="{ data: s, type: 'btn' }"
             />
           </div>
         </div>
-        <!--  -->
-        <div>
-          <div v-for="i in 3" :key="i" class="card__ads card__ads--row">
+        <!-- ALL ADS WRAPPER -->
+        <div class="mb-8 all-ads__wrapper mt-14">
+          <div v-for="i in 7" :key="i" class="card__ads card__ads--row">
             <!-- IMAGE -->
             <div class="card__ads__image">
               <img class="adj-image" src="~/assets/images/test.jpg" alt="" />
             </div>
+            <!-- OTHER INFO -->
             <div>
               <!-- CITY AND DISCRIPTION -->
               <div class="card__ads__content">
@@ -249,8 +260,18 @@
                 </div>
               </div>
             </div>
+            <!-- FAVORIT -->
+            <button class="card__ads__favorit">
+              <GSvg name-icon="heart" />
+            </button>
           </div>
         </div>
+        <!-- PAGINATION -->
+        <AppPagination
+          :current-page="currentPage"
+          :total="104"
+          @changePage="currentPage = $event"
+        />
       </div>
       <!-- END CATEGORIES -->
     </section>
@@ -287,6 +308,37 @@
       </div>
     </section>
     <!-- END DOWNLOAD APP -->
+
+    <!-- START STEPS -->
+    <section class="container steps">
+      <!-- STEP 1 -->
+      <div class="steps__step">
+        <GSvg name-icon="pin" />
+        <h5>سجل أولا</h5>
+        <p>قم بانشاء حسابك أولا على حراج السعودية</p>
+      </div>
+      <!-- NEXT -->
+      <div class="steps__next">
+        <GSvg name-icon="trans" />
+      </div>
+      <!-- STEP 2 -->
+      <div class="steps__step">
+        <GSvg name-icon="add" class="fill-current text-royal" />
+        <h5>سجل أولا</h5>
+        <p>قم بانشاء حسابك أولا على حراج السعودية</p>
+      </div>
+      <!-- NEXT -->
+      <div class="steps__next">
+        <GSvg name-icon="trans" />
+      </div>
+      <!-- STEP 3-->
+      <div class="steps__step">
+        <GSvg name-icon="touch" />
+        <h5>سجل أولا</h5>
+        <p>قم بانشاء حسابك أولا على حراج السعودية</p>
+      </div>
+    </section>
+    <!-- END STEPS -->
   </main>
 </template>
 
@@ -387,6 +439,7 @@ export default {
           },
         ],
       },
+      currentPage: 1,
       userSelectedCity: '',
       userSelectedOther: '',
     }
@@ -545,10 +598,11 @@ export default {
   .ads__content .ads__content__image {
     max-height: 18rem;
   }
+  .ads__content .slick-slide {
+    @apply pis-5;
+  }
 }
-.ads__content .slick-slide {
-  @apply pis-5;
-}
+
 .ads__banar {
   @apply mt-auto;
 }
@@ -558,20 +612,14 @@ export default {
 .ads__banar__content h4 {
   @apply font-heavy text-lg text-white;
 }
-.ads__banar__content a {
-  @apply text-white bg-mountain transition-colors duration-300 hover:bg-opacity-90 mis-10;
-  width: 14.5rem;
-  height: 5rem;
-}
 
 /* ADS BAR */
-.all-ads__bar,
 .all-ads__bar .all-ads__bar__actions,
-.all-ads__bar .all-ads__bar__actions button {
+.all-ads__bar .all-ads__bar__actions__btn {
   @apply flex items-center justify-center;
 }
 .all-ads__bar {
-  @apply justify-between;
+  @apply flex sm:flex-row flex-col items-center justify-between;
 }
 .all-ads__bar .all-ads__bar__actions .all-ads__bar__actions__btn {
   width: 4.5rem;
@@ -581,10 +629,30 @@ export default {
   width: 2rem;
   height: 2rem;
 }
+.all-ads__bar__actions .select__btn {
+  @apply bg-seashell border-0;
+}
 
 /* CARD ADS */
 .card__ads--row {
   @apply flex items-center mb-5 gap-x-8 overflow-hidden;
+}
+.card__ads--row .card__ads__image::after {
+  display: none;
+}
+.card__ads .card__ads__favorit {
+  @apply absolute top-5 left-5;
+}
+.card__ads .card__ads__favorit svg {
+  width: 2rem;
+  height: 2rem;
+  fill: white;
+}
+.card__ads--row .card__ads__favorit svg {
+  @apply text-royal fill-current;
+}
+.card__ads {
+  @apply relative;
 }
 .card__ads--row .card__ads__image {
   width: 20rem;
@@ -603,7 +671,7 @@ export default {
   height: 1.7rem;
 }
 .card__ads .card__ads__other-info {
-  @apply text-xs text-silver mt-5 justify-start;
+  @apply text-xs mt-8 text-silver justify-start;
 }
 .card__ads .card__ads__other-info,
 .card__ads .card__ads__other-info > div {
@@ -618,6 +686,32 @@ export default {
 .card__ads .card__ads__image::after {
   content: '';
   @apply top-0 left-0 right-0 bottom-0 absolute bg-gradient-to-t  from-transparent to-royal;
+}
+
+/* STEPS */
+.steps {
+  @apply grid md:grid-flow-col py-10 md:py-20;
+}
+.steps__step {
+  @apply flex flex-col items-center mb-12 md:mb-0;
+}
+.steps__step svg {
+  width: 6rem;
+  height: 6rem;
+}
+.steps__step h5 {
+  @apply text-lg my-5;
+}
+.steps__step p {
+  @apply text-md text-silver text-center px-8;
+}
+.steps .steps__next {
+  @apply hidden md:block;
+  width: 6.4rem;
+  height: 6rem;
+}
+.steps .steps__next svg {
+  @apply max-w-full;
 }
 
 /* DOWNLOAD APP */
@@ -647,9 +741,5 @@ export default {
 }
 .download-app__content__links a:first-of-type {
   @apply mie-5;
-}
-
-.all-ads__bar__actions .select__btn {
-  @apply bg-seashell border-0;
 }
 </style>
