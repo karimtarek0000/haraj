@@ -206,7 +206,7 @@
           <!-- ALL ADS -->
           <nuxt-link to="/">
             <GSvg name-icon="all" />
-            <p>كل إعلانات المدن</p>
+            <p>كل إعلانات العقارات</p>
           </nuxt-link>
         </div>
       </div>
@@ -222,7 +222,7 @@
               class="bg-mountain all-ads__bar__actions__btn"
               @click="changeViewCards = !changeViewCards"
             >
-              <GSvg :name-icon="changeViewCards ? 'grid' : 'row'" />
+              <GSvg :name-icon="changeViewCards ? 'row' : 'grid'" />
             </button>
             <!--  -->
             <button class="mx-5 bg-royal all-ads__bar__actions__btn">

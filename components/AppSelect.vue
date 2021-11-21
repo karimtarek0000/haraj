@@ -61,8 +61,8 @@ export default {
     })
   },
   methods: {
-    sendSelected(d) {
-      this.$emit('userSelected', d)
+    sendSelected(selected) {
+      this.$emit('userSelected', selected)
     },
   },
 }
