@@ -81,6 +81,20 @@ export default {
     config: {},
   },
 
+  //
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/register/sign-in',
+        component: resolve(__dirname, 'pages/register/sign-in.vue'),
+      })
+      routes.push({
+        path: '/register/sign-up',
+        component: resolve(__dirname, 'pages/register/sign-up.vue'),
+      })
+    },
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

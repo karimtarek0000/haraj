@@ -2,7 +2,7 @@
   <footer class="footer">
     <!--  -->
     <div
-      class="container grid w-full  lg:grid-flow-col footer-wrapper gap-11 lg:gap-x-32"
+      class="container relative grid w-full  shape__3 lg:grid-flow-col footer-wrapper gap-11 lg:gap-x-32"
     >
       <!-- COL-1 -->
       <div class="footer__col-1">

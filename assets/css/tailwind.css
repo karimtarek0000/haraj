@@ -49,6 +49,7 @@
     user-select: none;
   }
 
+  h1,
   h2,
   h3,
   h5 {
@@ -123,6 +124,8 @@
 .browse__ads,
 .sidebar-ads > div,
 .card__ads--row,
+.input,
+.register,
 .browse__categories__content__link {
   @apply border border-mercury;
 }
@@ -164,7 +167,7 @@
   width: 27.4rem;
   height: 8.5rem;
   top: 3.5rem;
-  left: -19.7rem;
+  left: -32.7rem;
   opacity: 0.5;
 }
 .shape__3::before {
@@ -174,8 +177,26 @@
   background-size: cover;
   width: 24.4rem;
   height: 8.5rem;
-  bottom: 7rem;
-  right: -5.699999999999999rem;
+  bottom: 3rem;
+  right: -15.7rem;
   opacity: 0.2;
   pointer-events: none;
+}
+
+/* LABEL AND INPUT */
+label {
+  @apply mb-6 text-sm font-heavy;
+}
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  @apply font-medium pis-5 text-md;
+}
+input:focus {
+  @apply outline-royal;
+}
+input::placeholder {
+  @apply font-medium text-silver text-md;
 }

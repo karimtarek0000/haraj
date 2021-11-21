@@ -9,7 +9,7 @@
     <!-- END PAGES -->
 
     <!-- START FOOTER -->
-    <AppFooter class="relative overflow-hidden shape__3" />
+    <AppFooter class="overflow-hidden" />
     <!-- END FOOTER -->
   </div>
 </template>
