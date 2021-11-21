@@ -188,7 +188,7 @@
     </section>
     <!-- END SECTION ADS -->
 
-    <!-- START ALL -->
+    <!-- START ALL ADS -->
     <section class="container relative all-ads shape__1">
       <!-- ADS BUILDING -->
       <div class="sidebar-ads">
@@ -222,7 +222,7 @@
               class="bg-mountain all-ads__bar__actions__btn"
               @click="changeViewCards = !changeViewCards"
             >
-              <GSvg :name-icon="changeViewCards ? 'row' : 'grid'" />
+              <GSvg :name-icon="changeViewCards ? 'grid' : 'row'" />
             </button>
             <!--  -->
             <button class="mx-5 bg-royal all-ads__bar__actions__btn">
@@ -236,8 +236,17 @@
           </div>
         </div>
         <!-- ALL ADS WRAPPER -->
-        <div class="mb-8 all-ads__wrapper mt-14">
-          <div v-for="i in 7" :key="i" class="card__ads card__ads--row">
+        <div
+          :class="[
+            'mb-8 all-ads__wrapper mt-14',
+            { 'grid sm:grid-cols-2 gap-x-3 gap-y-7': changeViewCards },
+          ]"
+        >
+          <div
+            v-for="i in 7"
+            :key="i"
+            :class="['card__ads', { 'card__ads--row': !changeViewCards }]"
+          >
             <!-- IMAGE -->
             <div class="card__ads__image">
               <img class="adj-image" src="~/assets/images/test.jpg" alt="" />
@@ -278,7 +287,7 @@
       </div>
       <!-- END CATEGORIES -->
     </section>
-    <!-- END -->
+    <!-- END ALL ADS -->
 
     <!-- START DOWNLOAD APP -->
     <section class="download-app">
