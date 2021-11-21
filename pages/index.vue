@@ -30,7 +30,7 @@
     <!-- END SORT AND SEARCH -->
 
     <!-- START SECTION BROWES -->
-    <section class="container browse">
+    <section class="container relative browse shape__2">
       <!-- START ADS -->
       <div class="browse__ads">
         <!-- START HEAD -->
@@ -112,7 +112,7 @@
     <!-- END SECTION BROWES -->
 
     <!-- START SECTION ADS -->
-    <section class="container ads">
+    <section class="container relative ads shape__1">
       <!-- ADS CITY -->
       <div class="sidebar-ads">
         <h2>إعلانات المدن</h2>
@@ -189,7 +189,7 @@
     <!-- END SECTION ADS -->
 
     <!-- START ALL -->
-    <section class="container all-ads">
+    <section class="container relative all-ads shape__1">
       <!-- ADS BUILDING -->
       <div class="sidebar-ads">
         <h2>حراج العقارات</h2>
@@ -217,9 +217,12 @@
           <h2 class="mb-7 sm:mb-0">كل الإعلانات</h2>
           <!--  -->
           <div class="all-ads__bar__actions">
-            <!--  -->
-            <button class="bg-mountain all-ads__bar__actions__btn">
-              <GSvg name-icon="grid" />
+            <!-- CHANGE VIEW CARD -->
+            <button
+              class="bg-mountain all-ads__bar__actions__btn"
+              @click="changeViewCards = !changeViewCards"
+            >
+              <GSvg :name-icon="changeViewCards ? 'row' : 'grid'" />
             </button>
             <!--  -->
             <button class="mx-5 bg-royal all-ads__bar__actions__btn">
@@ -419,6 +422,7 @@ export default {
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
+        rtl: true,
         pauseOnDotsHover: true,
         pauseOnFocus: true,
         pauseOnHover: true,
@@ -442,6 +446,8 @@ export default {
       currentPage: 1,
       userSelectedCity: '',
       userSelectedOther: '',
+      //
+      changeViewCards: false,
     }
   },
   head() {

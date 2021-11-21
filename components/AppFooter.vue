@@ -79,7 +79,7 @@
         <p>جميع الحقوق محفوظة لموقع حراج السعودية @ {{ getYear }}</p>
         <div class="flex items-center">
           <span class="mie-7">تصميم وبرمجة</span>
-          <GSvg style="width: 6rem; height: 6rem" name-icon="ibtdi" />
+          <GSvg style="width: 6rem; height: 3rem" name-icon="ibtdi" />
         </div>
       </div>
     </div>
