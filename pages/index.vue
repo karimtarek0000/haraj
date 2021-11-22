@@ -114,31 +114,24 @@
     <!-- START SECTION ADS -->
     <section class="container relative ads shape__1">
       <!-- ADS CITY -->
-      <!-- <div class="sidebar-ads"> -->
-      <!-- <h2>إعلانات المدن</h2> -->
-      <!-- CONTENT -->
-      <!-- <div class="sidebar-ads__content"> -->
-      <!-- INDEVISUAL ADS -->
-      <!-- <nuxt-link v-for="i in 9" :key="i" to="/">
+      <div class="sidebar__wrapper">
+        <h2>إعلانات المدن</h2>
+        <!-- CONTENT -->
+        <div class="sidebar-ads__content">
+          <!-- INDEVISUAL ADS -->
+          <nuxt-link v-for="i in 9" :key="i" to="/">
             <div class="flex items-center">
               <p>الرياض</p>
               <figure class="mis-7">(180)</figure>
             </div>
             <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
-          </nuxt-link> -->
-      <!-- ALL ADS -->
-      <!-- <nuxt-link to="/">
+          </nuxt-link>
+          <!-- ALL ADS -->
+          <nuxt-link to="/">
             <GSvg name-icon="all" />
             <p>كل إعلانات المدن</p>
-          </nuxt-link> -->
-      <!-- </div> -->
-      <!-- </div> -->
-      <div>
-        <h2>testing</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-          deserunt.
-        </p>
+          </nuxt-link>
+        </div>
       </div>
       <!--  -->
       <div class="ads__content">
@@ -198,7 +191,7 @@
     <!-- START ALL ADS -->
     <section class="container relative all-ads shape__1">
       <!-- ADS BUILDING -->
-      <div class="sidebar-ads">
+      <div class="sidebar__wrapper">
         <h2>حراج العقارات</h2>
         <!-- CONTENT -->
         <div class="sidebar-ads__content">
@@ -577,33 +570,34 @@ export default {
 .ads__content__slider .slide {
   direction: rtl;
 }
-.sidebar-ads > div {
+
+.sidebar__wrapper > div {
   @apply px-10 mt-16;
 }
-.sidebar-ads .sidebar-ads__content a {
+.sidebar__wrapper .sidebar-ads__content a {
   @apply flex items-center justify-between text-md py-7;
 }
-.sidebar-ads .sidebar-ads__content svg {
+.sidebar__wrapper .sidebar-ads__content svg {
   @apply text-silver fill-current;
 }
-.sidebar-ads a:not(:last-of-type) {
+.sidebar__wrapper a:not(:last-of-type) {
   @apply border-b border-mercury;
 }
-.sidebar-ads a:last-of-type {
+.sidebar__wrapper a:last-of-type {
   @apply text-md text-mountain justify-center font-extrabold;
 }
-.sidebar-ads a:last-of-type svg {
+.sidebar__wrapper a:last-of-type svg {
   @apply mie-3;
   width: 2.4rem;
   height: 2.4rem;
 }
-.sidebar-ads a svg {
+.sidebar__wrapper a svg {
   transform: rotate(90deg);
 }
-.sidebar-ads a figure {
+.sidebar__wrapper a figure {
   @apply text-royal font-bold;
 }
-.sidebar-ads > * {
+.sidebar__wrapper > * {
   @apply w-full;
 }
 
