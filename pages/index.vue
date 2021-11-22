@@ -119,7 +119,28 @@
         <!-- CONTENT -->
         <div class="sidebar-ads__content">
           <!-- INDEVISUAL ADS -->
-          <nuxt-link v-for="i in 9" :key="i" to="/">
+          <nuxt-link to="/">
+            <div class="flex items-center">
+              <p>الرياض</p>
+              <figure class="mis-7">(180)</figure>
+            </div>
+            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
+          </nuxt-link>
+          <nuxt-link to="/">
+            <div class="flex items-center">
+              <p>الرياض</p>
+              <figure class="mis-7">(180)</figure>
+            </div>
+            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
+          </nuxt-link>
+          <nuxt-link to="/">
+            <div class="flex items-center">
+              <p>الرياض</p>
+              <figure class="mis-7">(180)</figure>
+            </div>
+            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
+          </nuxt-link>
+          <nuxt-link to="/">
             <div class="flex items-center">
               <p>الرياض</p>
               <figure class="mis-7">(180)</figure>
@@ -467,11 +488,9 @@ export default {
 }
 </script>
 <style>
-.ads {
-  display: flex;
-}
 .browse,
-.all-ads {
+.all-ads,
+.ads {
   @apply grid items-start gap-10 lg:gap-20 mt-14 md:grid-cols-mainBodyRes lg:grid-cols-mainBody;
 }
 .browse__categories {
