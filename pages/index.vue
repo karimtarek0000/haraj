@@ -114,45 +114,31 @@
     <!-- START SECTION ADS -->
     <section class="container relative ads shape__1">
       <!-- ADS CITY -->
-      <div class="sidebar-ads">
-        <h2>إعلانات المدن</h2>
-        <!-- CONTENT -->
-        <div class="sidebar-ads__content">
-          <!-- INDEVISUAL ADS -->
-          <nuxt-link to="/">
+      <!-- <div class="sidebar-ads"> -->
+      <!-- <h2>إعلانات المدن</h2> -->
+      <!-- CONTENT -->
+      <!-- <div class="sidebar-ads__content"> -->
+      <!-- INDEVISUAL ADS -->
+      <!-- <nuxt-link v-for="i in 9" :key="i" to="/">
             <div class="flex items-center">
               <p>الرياض</p>
               <figure class="mis-7">(180)</figure>
             </div>
             <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
-          </nuxt-link>
-          <nuxt-link to="/">
-            <div class="flex items-center">
-              <p>الرياض</p>
-              <figure class="mis-7">(180)</figure>
-            </div>
-            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
-          </nuxt-link>
-          <nuxt-link to="/">
-            <div class="flex items-center">
-              <p>الرياض</p>
-              <figure class="mis-7">(180)</figure>
-            </div>
-            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
-          </nuxt-link>
-          <nuxt-link to="/">
-            <div class="flex items-center">
-              <p>الرياض</p>
-              <figure class="mis-7">(180)</figure>
-            </div>
-            <GSvg style="width: 12px; height: 7px" name-icon="arrow-down" />
-          </nuxt-link>
-          <!-- ALL ADS -->
-          <nuxt-link to="/">
+          </nuxt-link> -->
+      <!-- ALL ADS -->
+      <!-- <nuxt-link to="/">
             <GSvg name-icon="all" />
             <p>كل إعلانات المدن</p>
-          </nuxt-link>
-        </div>
+          </nuxt-link> -->
+      <!-- </div> -->
+      <!-- </div> -->
+      <div>
+        <h2>testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
+          deserunt.
+        </p>
       </div>
       <!--  -->
       <div class="ads__content">
