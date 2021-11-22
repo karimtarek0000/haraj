@@ -467,9 +467,11 @@ export default {
 }
 </script>
 <style>
-.browse,
-.all-ads,
 .ads {
+  display: flex;
+}
+.browse,
+.all-ads {
   @apply grid items-start gap-10 lg:gap-20 mt-14 md:grid-cols-mainBodyRes lg:grid-cols-mainBody;
 }
 .browse__categories {
