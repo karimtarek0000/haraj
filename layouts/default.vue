@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden debug-screens">
+  <div class="overflow-hidden">
     <!-- START NAVBAR -->
     <AppNavbar class="container" />
     <!-- END NAVBAR -->
